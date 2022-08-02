@@ -1,48 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talk2Me Raphaela Karina</title>
-</head>
-<body onload="abrir()">
-    
+  <head>
+  	<title>4Talk.me</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
-        function abrir() {
-          
-          let op = prompt("1 - Whatsapp \n2 - Email \n3 - Ligação \n4 - SMS");
-          
-          if (op === '1') {
-            if( navigator.userAgent.match(/Android/i)
-          || navigator.userAgent.match(/webOS/i)
-          || navigator.userAgent.match(/iPhone/i)
-          || navigator.userAgent.match(/iPad/i)
-          || navigator.userAgent.match(/iPod/i)
-          || navigator.userAgent.match(/BlackBerry/i)
-          || navigator.userAgent.match(/Windows Phone/i)
-          ){
-            window.location.replace('whatsapp://send?text=Olá, Raphaela Karina.&phone=5583999801146');
+	<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/fontawesome.min.css" integrity="sha512-R+xPS2VPCAFvLRy+I4PgbwkWjw1z5B5gNDYgJN5LfzV4gGNeRQyVrY7Uk59rX+c8tzz63j8DeZPLqmXvBxj8pA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+
+			<!--
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">4Talk.me</h2>
+				</div>
+			</div>
+			-->
+
+			<div class="row justify-content-center">
+				<div class="col-lg-10 col-md-12">
+					<div class="wrapper">
+						<div class="row justify-content-center">
+
+							<div class="col-lg-8 mb-2 mt-5">
+
+								<div class="row">
+									<div class="col-md-12">
+										<div class="dbox w-100 text-center">
+											<div style="cursor: pointer;" onClick="whatsapp();" class="icon d-flex align-items-center justify-content-center">
+												<span class="fa-brands fa-whatsapp"></span>
+											</div>
+					          			</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-12">
+										<div class="dbox w-100 text-center">
+											<div style="cursor: pointer;" onClick="call();" class="icon d-flex align-items-center justify-content-center">
+												<span class="fa fa-phone"></span>
+											</div>
+					          			</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-12">
+										<div class="dbox w-100 text-center">
+											<div style="cursor: pointer;" onClick="email();" class="icon d-flex align-items-center justify-content-center">
+												<span class="fa fa-envelope"></span>
+											</div>
+					          			</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-12">
+										<div class="dbox w-100 text-center">
+											<div style="cursor: pointer;" onClick="sms();" class="icon d-flex align-items-center justify-content-center">
+												<span class="fa fa-comment-sms"></span>
+											</div>
+					          			</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script>
+
+		function whatsapp() {
+			if( navigator.userAgent.match(/Android/i)
+          		|| navigator.userAgent.match(/webOS/i)
+          		|| navigator.userAgent.match(/iPhone/i)
+          		|| navigator.userAgent.match(/iPad/i)
+          		|| navigator.userAgent.match(/iPod/i)
+          		|| navigator.userAgent.match(/BlackBerry/i)
+          		|| navigator.userAgent.match(/Windows Phone/i)
+          	) {
+            	window.open('whatsapp://send?text=Olá, Raphaela Karina.&phone=5583999801146');
+            } else {
+            	window.open('https://api.whatsapp.com/send?phone=5583999801146&text=Olá, Raphaela Karina.');
             }
-          else {
-            window.location.replace('https://api.whatsapp.com/send?phone=5583999801146&text=Olá, Raphaela Karina.');
-            }
-          } else if (op === '2') {
-            window.location.replace("mailto:raphadantas2018@gmail.com");
-          } else if (op === '3') {
-            window.location.replace("tel:+5583999801146");
-          } else if (op === '4') {
-            window.location.replace("sms:+5583999801146");
-          }
-            
-        }
+		}
 
-    </script>
-    
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+		function call() {
+			window.open('tel:+5583999801146');
+		}
 
-</body>
+		function email() {
+			window.open('mailto:raphadantas2018@gmail.com');
+		}
+
+		function sms() {
+			window.open('sms:+5583999801146');
+		}
+
+	</script>
+
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/main.js"></script>
+
+	</body>
 </html>
+
